@@ -78,7 +78,7 @@ class Controller:
     def is_instructions_str_valid(self, instructions_str):
         """
         Verifies if instruction match the expected regex pattern
-        :param instructions_str: (str)
+        :param instructions_str: (str) rover actions ex: 'lrmrmmrr'
         :return: Bool
         """
         return self.instructions_pattern.match(instructions_str) is not None
@@ -86,8 +86,8 @@ class Controller:
     def move_rover_action(self, instructions_str, rover_obj):
         """
         Execute the move action
-        :param instructions_str:
-        :param rover_obj:
+        :param instructions_str: (str) rover actions ex: 'lrmrmmrr'
+        :param rover_obj: (obj) rover object
         :return:
         """
         x_init, y_init = rover_obj.x_pos, rover_obj.y_pos

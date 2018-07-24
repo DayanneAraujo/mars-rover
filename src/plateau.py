@@ -11,6 +11,8 @@ class Plateau:
     Attributes:
         x_max (int): x axis limit.
         y_max (int): y axis limit.
+        pos_matrix (list): it is a matrix of booleans representing witch
+            positions on plateau are available.
     """
     def __init__(self, x_max, y_max):
         self.x_max = x_max + 1
