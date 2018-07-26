@@ -4,6 +4,7 @@ from plateau import Plateau
 from rover import Rover
 from src.exceptions.ex_collision import CollisionException
 from src.exceptions.ex_rover import InvalidRover
+from src.exceptions.ex_plateau import PlateauException
 
 
 class Controller:
@@ -19,7 +20,10 @@ class Controller:
         :param y: (int) y dimension on plateau grid
         :return: plateau object
         """
-        self.plateau = Plateau(x_max=x, y_max=y)
+        if self.plateau is None:
+            self.plateau = Plateau(x_max=x, y_max=y)
+        else:
+            raise PlateauException("Plateau already defined")
 
     def is_rover_on_plateau(self, x, y):
         """

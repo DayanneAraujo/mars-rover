@@ -2,6 +2,7 @@ from src.mars_controller import Controller
 from src.exceptions.ex_invalid_plateau_bounds import InvalidPlateauBounds
 from src.exceptions.ex_collision import CollisionException
 from src.exceptions.ex_rover import InvalidRover
+from src.exceptions.ex_plateau import PlateauException
 import src.constants as c
 import re
 
@@ -79,10 +80,13 @@ def plateau_input_handle(command_parts, ctrl):
             x = int(dimension_parameters[0])
             y = int(dimension_parameters[1])
 
-            ctrl.set_plateau(x, y)
+            try:
+                ctrl.set_plateau(x, y)
+            except PlateauException as ex:
+                print ex.msg
 
         else:
-            print "Plateau invalid arguments.".format(command_parts)
+            print "Plateau invalid arguments {}.".format(command_parts)
 
 
 def is_landing_param_valid(landing_params):

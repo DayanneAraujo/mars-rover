@@ -22,13 +22,15 @@ Solution of the Mars Rover challenge described [here](https://github.com/abdulg/
 
 *Input 1: Landing co-ordinates for the named Rover. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation.*
 
-*Input 2: Navigation instructions for the named rover. i.e a string containing ('L', 'R', 'M').*
+*Input 2: Navigation instructions for the named rover. i.e a string containing ('L', 'R', 'M').*"
 
 ## Some edge cases
 * It is not possible to land outside of plateau;
 * It is not possible to land on a busy grid position;
-* It is not possible to move outside of plateau (you can update the plateau);
-* It is not possible move to a busy grid position, it will reset the initial position.
+* It is not possible to move outside of plateau;
+* It is not possible move to a busy grid position, it will reset to the initial position.
+* It is not possible to use plateau on negatives positions (0 > x or y )
+* Once plateau is defined, it is not possible to overwrite it.
 
 ## Usage
 * Python 2.7.2 is required, so please install [here](https://www.python.org/downloads/).

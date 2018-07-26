@@ -85,7 +85,7 @@ class Rover:
                     self.heading = c.CARDINAL_FLOW[index-1]
             else:
                 raise ValueError("Rotation direction not allowed: {}. "
-                      "Please try using: r or l".format(direction))
+                                 "Please try using: r or l".format(direction))
         else:
             raise InvalidRover("The Rover must be landed to spin")
 
@@ -99,7 +99,6 @@ class Rover:
 
             self.x_pos = self.x_pos + move_cord[0]
             self.y_pos = self.y_pos + move_cord[1]
-
 
         else:
             raise ValueError("The Rover must be landed on plateau")

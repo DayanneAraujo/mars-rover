@@ -15,17 +15,20 @@ class Plateau:
             positions on plateau are available.
     """
     def __init__(self, x_max, y_max):
-        self.x_max = x_max + 1
-        self.y_max = y_max + 1
-        self.pos_matrix = [[True for x in range(self.x_max)]
-                           for y in range(self.y_max)]
+        self.x_max = x_max
+        self.y_max = y_max
+
+        self.x_max_op = x_max + 1
+        self.y_max_op = y_max + 1
+        self.pos_matrix = [[True for x in range(self.x_max_op)]
+                           for y in range(self.y_max_op)]
 
     def is_available(self, x, y):
         self.verify_bounds(x, y)
         return self.pos_matrix[x][y]
 
     def verify_bounds(self, x, y):
-        if (x < 0 or y < 0) or (x >= self.x_max or y >= self.y_max):
+        if (x < 0 or y < 0) or (x >= self.x_max_op or y >= self.y_max_op):
             raise InvalidPlateauBounds("Invalid plateau bounds.")
 
     def set_pos_matrix(self, x, y):
